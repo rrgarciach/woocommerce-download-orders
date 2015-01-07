@@ -8,20 +8,20 @@ Version: 0.0.1
 Author URI: http://developercats.com
 */
 
-// Add jQuery UI date picker to this page:
-wp_enqueue_script('jquery-ui-datepicker');
-wp_enqueue_style('jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css');
-
-// Add custom JS script to admin page:
-add_action( 'admin_enqueue_scripts', 'add_js_script_init' );
-function add_js_script_init() {
-	wp_enqueue_script("admin_print_scripts-$mypage", plugins_url( '/js/download-orders.js' , __FILE__ ));
+// inclure the download script:
+include dirname(__FILE__).'/downloader.php';
+// Attach tne download function to the WP script flow in order to be triggered:
+add_action('admin_menu', 'attachDownloadTrigger');
+function attachDownloadTrigger() {
+	if( isset($_GET['download']) ) {
+		downloadTest();
+	}
 }
 
-// Add this admin page to the WP site:
+// Add this admin page to the WC admin menu:
 add_action('admin_menu', 'add_to_admin_menu');
 function add_to_admin_menu() {
-	add_management_page('TRUPER Download Orders', 'DISTRIBUIDORA GC Download Orders', 'manage_options', __FILE__, 'display_page');
+	add_submenu_page( 'woocommerce', 'DISTRIBUIDORA GC Download Orders', 'DISTRIBUIDORA GC Download Orders', 'manage_options', 'woocommerce-download-orders', 'display_page'); 
 }
 
 function display_page() {
@@ -36,71 +36,62 @@ function display_page() {
 			Fecha:<br/> del <input type="text" name="datefrom" id="datefrom" size="8"> al <input type="text" name="dateto" id="dateto" size="8"><br/>
 			Codigo de cliente:<br/> <input type="text" name="customer" size="6"><br/>
 		</fieldset>
-		<input type="submit" name="search_draft_posts" value="Buscar ordenes" class="button-primary">
+		<input type="submit" name="search_orders" id="search_orders" value="Buscar ordenes" class="button-primary">
 	</form>
 	<table class="widefat">
 		<thead>
 			<tr>
-				<th>Post Title</th>
-				<th>Post ID</th>
+				<th>ID Pedido:</th>
+				<th>ID Cliente:</th>
+				<th>Nombre Cliente:</th>
+				<th>Fecha</th>
+				<th>Detalle</th>
+				<th>Total</th>
+				<th>Descarga</th>
 			</tr>
 		</thead>
 		<tfoot>
 			<tr>
-				<th>Post Title</th>
-				<th>Post ID</th>
+				<th>ID Pedido:</th>
+				<th>ID Cliente:</th>
+				<th>Nombre Cliente:</th>
+				<th>Fecha</th>
+				<th>Detalle</th>
+				<th>Total</th>
+				<th>Descarga</th>
 			</tr>
 		</tfoot>
 		<tbody>
 <?php
-	global $wpdb;
-	if( isset($_POST['search_draft_posts']) ) {
-		$searchDate = isset($_POST['datefrom']) ? $_POST['datefrom'] : 'NULL';
-		$searchToDate = isset($_POST['dateto']) ? $_POST['dateto'] : 'NULL';
 
-		$mytestdrafts = $wpdb->get_results(
-			"SELECT ID, post_title
-			FROM $wpdb->posts
-			WHERE post_date BETWEEN '$searchFromDate' AND '$searchToDate'"
-			);
-		echo "<h1>$searchDate - $searchToDate</h1>";
-
-		foreach ($mytestdrafts as $mytestdraft) {
+	$orders = searchOrders();
+	foreach ($orders as $order) {
 ?>
 			<tr>
-<?php
-			echo "<td>$mytestdraft->post_title</td>";
-			echo "<td>$mytestdraft->ID</td>";
-?>
+				<td><?php echo $order->id ?></td>
+				<td><?php echo $order->customer->user_login ?></td>
+				<td><?php echo $order->customer->display_name ?></td>
+				<td><?php echo $order->order_date ?></td>
+				<td></td>
+				<td><?php echo number_format($order->total,2) ?></td>
+				<td><a href="" id="download-<?php echo $order->id ?>">DESCARGAR</a></td>
+				<script type="text/javascript">
+					$('#download-<?php echo $order->id ?>').on("click", function(e){
+					    e.preventDefault();
+					    alert('clicked');
+					    // $('#search_orders').attr('action', "?download=1").submit();
+					    $('#search_orders').submit();
+					});
+				</script>
 			</tr>
 <?php
 		}
-	}
+
 ?>
 		</tbody>
 	</table>
 </div>
 <?php
-	$args = array(
-		'post_type' => 'shop_order',
-		'post_status' => 'publish',
-		'meta_key' => '_customer_user',
-		'posts_per_page' => '-1'
-	);
-	$my_query = new WP_Query($args);
 
-	$customer_orders = $my_query->posts;
-
-	echo '<h1>testing...</h1>';
-	foreach ($customer_orders as $customer_order) {
-		$order = new WC_Order();
-
-		$order->populate($customer_order);
-		// echo "<h1>Order ID: ".var_dump($order)."</h1>";
-		echo "<h1>Order ID: ".$order->id."</h1>";
-		$orderdata = (array) $order;
-
-		// $orderdata Array will have Information. for e.g Shippin firstname, Lastname, Address ... and MUCH more.... Just enjoy!
-	}
 }
 ?>

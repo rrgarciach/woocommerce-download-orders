@@ -27,16 +27,20 @@ function add_to_admin_menu() {
 function display_page() {
 ?>
 <div class="wrap">
-	<h4>Descarga de Ordenes</h4>
-	<h3>En esta seccion podra buscar ordenes para descargar.</h3>
-	<p>Seleccione abajo los parametros de busqueda y luego de click en el boton "Buscar ordenes"</p>
+	<h4>Descarga de Pedidos</h4>
+	<h3>En esta sección podrá buscar pedidos para descargar.</h3>
+	<p>Seleccione abajo los parámetros de búsqueda y luego de clíck en el botón "Buscar Pedidos"</p>
 	<form action="" method="post">
 		<fieldset>
-			<legend>Parametros de busqueda:</legend>
-			Fecha:<br/> del <input type="text" name="datefrom" id="datefrom" size="8"> al <input type="text" name="dateto" id="dateto" size="8"><br/>
-			Codigo de cliente:<br/> <input type="text" name="customer" size="6"><br/>
+			<legend><h3>Parametros de busqueda:</h3></legend>
+			<strong>Fecha del Pedido:</strong><br/>
+			 del <input type="text" name="date_from" id="date_from" size="8">
+			  al <input type="text" name="date_to" id="date_to" size="8"><br/>
+			<strong>Codigo de cliente:</strong><br/>
+			 del <input type="text" name="customer_id_from" id="customer_id_from" size="6">
+			 al <input type="text" name="customer_id_to" id="customer_id_to" size="6"><br/>
 		</fieldset>
-		<input type="submit" name="search_orders" id="search_orders" value="Buscar ordenes" class="button-primary">
+		<input type="submit" name="search_orders" id="search_orders" value="Buscar Pedidos" class="button-primary">
 	</form>
 	<table class="widefat">
 		<thead>
@@ -73,8 +77,8 @@ function display_page() {
 				<td><?php echo $order->customer->display_name ?></td>
 				<td><?php echo $order->order_date ?></td>
 				<td></td>
-				<td><?php echo number_format($order->total,2) ?></td>
-				<td><a href="" id="download-<?php echo $order->id ?>">DESCARGAR</a></td>
+				<td align="right">$ <?php echo number_format($order->total,2) ?></td>
+				<td><button href="" id="download-<?php echo $order->id ?>">CSV</button> <button href="" id="download-<?php echo $order->id ?>">TXT</button></td>
 				<script type="text/javascript">
 					$('#download-<?php echo $order->id ?>').on("click", function(e){
 					    e.preventDefault();

@@ -8,6 +8,16 @@ Version: 0.0.1
 Author URI: http://developercats.com
 */
 
+// Add jQuery UI date picker to this page:
+wp_enqueue_script('jquery-ui-datepicker');
+wp_enqueue_style('jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css');
+
+// Add custom JS script to admin page:
+add_action( 'admin_enqueue_scripts', 'add_js_script_init' );
+function add_js_script_init() {
+	wp_enqueue_script("admin_print_scripts-download-orders", plugins_url( '/js/download-orders.js' , __FILE__ ));
+}
+
 // inclure the download script:
 include dirname(__FILE__).'/downloader.php';
 // Attach tne download function to the WP script flow in order to be triggered:

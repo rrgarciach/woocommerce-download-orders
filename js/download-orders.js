@@ -7,16 +7,10 @@ Version: 0.0.1
 Author URI: http://developercats.com
 */
 jQuery(document).ready(function() {
-	// alert('ok');
-	jQuery('#datefrom').datepicker({
+	jQuery('#date_from').datepicker({
 		dateFormat : 'yy-mm-dd'
 	});
-	jQuery('#dateto').datepicker({
+	jQuery('#date_to').datepicker({
 		dateFormat : 'yy-mm-dd'
 	});
 });
-function popup(){
-
-   alert('hello there this is a test popup');
-
-}

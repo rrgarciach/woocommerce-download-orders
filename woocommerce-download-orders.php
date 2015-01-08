@@ -21,7 +21,7 @@ function attachDownloadTrigger() {
 // Add this admin page to the WC admin menu:
 add_action('admin_menu', 'add_to_admin_menu');
 function add_to_admin_menu() {
-	add_submenu_page( 'woocommerce', 'DISTRIBUIDORA GC Download Orders', 'DISTRIBUIDORA GC Download Orders', 'manage_options', 'woocommerce-download-orders', 'display_page'); 
+	add_submenu_page( 'woocommerce', 'DISTRIBUIDORA GC Descarga de Pedidos', 'DISTRIBUIDORA GC Descarga de Pedidos', 'manage_options', 'woocommerce-download-orders', 'display_page'); 
 }
 
 function display_page() {

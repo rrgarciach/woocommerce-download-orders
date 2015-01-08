@@ -35,40 +35,41 @@ function add_to_admin_menu() {
 }
 
 function display_page() {
+$search_params = getParamsOptions();
 ?>
 <div class="wrap">
 	<h1>Descarga de Pedidos</h1>
 	<p>En esta sección podrá buscar pedidos para descargar.</p>
 	<p>Seleccione abajo los parámetros de búsqueda y luego de clíck en el botón "Buscar Pedidos".</p>
-	<form action="" method="post">
 		<h3>Parametros de busqueda:</h3>
 		<table class="widefat">
 			<thead>
 				<tr>
-					<th>Fecha del Pedido:</th>
 					<th>Codigo de cliente:</th>
+					<th>Fecha del Pedido:</th>
 					<th></th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
+					<form action="" method="post" id="search_form">
 					<td>
-						<input type="text" name="date_from" id="date_from" placeholder="del" size="8">
-						<input type="text" name="date_to" id="date_to" placeholder="al" size="8">
-					<td>
-						<input type="text" name="customer_id_from" id="customer_id_from" placeholder="del" size="4">
-			 			<input type="text" name="customer_id_to" id="customer_id_to" placeholder="al" size="4">
+						<input type="text" name="customer_id_from" id="customer_id_from" placeholder="del" size="4" value="<?php echo $search_params['customer_id_from']; ?>" class="search_form_class">
+			 			<input type="text" name="customer_id_to" id="customer_id_to" placeholder="al" size="4" value="<?php echo $search_params['customer_id_to']; ?>" class="search_form_class">
 			 		</td>
+					<td>
+						<input type="text" name="date_from" id="date_from" placeholder="del" size="8" value="<?php echo $search_params['date_from']; ?>" class="search_form_class">
+						<input type="text" name="date_to" id="date_to" placeholder="al" size="8" value="<?php echo $search_params['date_to']; ?>" class="search_form_class">
 					<td></td>
 					<td>
 						<input type="submit" name="search_orders" id="search_orders" value="Buscar Pedidos" class="button-primary">
-						<input type="reset" name="reset_button" id="reset_button" value="Limpiar Campos" class="button-secundary">
+						<input type="button" value="Borrar Campos" id="reset_form">
 					</td>
+					</form>
 				</tr>
 			</tbody>
 		</table>
-	</form>
 	<table class="widefat">
 		<thead>
 			<tr>
@@ -94,7 +95,6 @@ function display_page() {
 		</tfoot>
 		<tbody>
 <?php
-
 	$orders = searchOrders();
 	foreach ($orders as $order) {
 ?>

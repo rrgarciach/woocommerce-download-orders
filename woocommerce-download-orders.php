@@ -27,20 +27,37 @@ function add_to_admin_menu() {
 function display_page() {
 ?>
 <div class="wrap">
-	<h4>Descarga de Pedidos</h4>
-	<h3>En esta sección podrá buscar pedidos para descargar.</h3>
-	<p>Seleccione abajo los parámetros de búsqueda y luego de clíck en el botón "Buscar Pedidos"</p>
+	<h1>Descarga de Pedidos</h1>
+	<p>En esta sección podrá buscar pedidos para descargar.</p>
+	<p>Seleccione abajo los parámetros de búsqueda y luego de clíck en el botón "Buscar Pedidos".</p>
 	<form action="" method="post">
-		<fieldset>
-			<legend><h3>Parametros de busqueda:</h3></legend>
-			<strong>Fecha del Pedido:</strong><br/>
-			 del <input type="text" name="date_from" id="date_from" size="8">
-			  al <input type="text" name="date_to" id="date_to" size="8"><br/>
-			<strong>Codigo de cliente:</strong><br/>
-			 del <input type="text" name="customer_id_from" id="customer_id_from" size="6">
-			 al <input type="text" name="customer_id_to" id="customer_id_to" size="6"><br/>
-		</fieldset>
-		<input type="submit" name="search_orders" id="search_orders" value="Buscar Pedidos" class="button-primary">
+		<h3>Parametros de busqueda:</h3>
+		<table class="widefat">
+			<thead>
+				<tr>
+					<th>Fecha del Pedido:</th>
+					<th>Codigo de cliente:</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<input type="text" name="date_from" id="date_from" placeholder="del" size="8">
+						<input type="text" name="date_to" id="date_to" placeholder="al" size="8">
+					<td>
+						<input type="text" name="customer_id_from" id="customer_id_from" placeholder="del" size="4">
+			 			<input type="text" name="customer_id_to" id="customer_id_to" placeholder="al" size="4">
+			 		</td>
+					<td></td>
+					<td>
+						<input type="submit" name="search_orders" id="search_orders" value="Buscar Pedidos" class="button-primary">
+						<input type="reset" name="reset_button" id="reset_button" value="Limpiar Campos" class="button-secundary">
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</form>
 	<table class="widefat">
 		<thead>

@@ -1,4 +1,13 @@
 <?php
+$search_params = array();
+if ( isset($_POST['search_orders']) ) {
+	$search_params[] = $_POST['date_from'];
+	$search_params[] = $_POST['date_to'];
+	$search_params[] = $_POST['customer_id_from'];
+	$search_params[] = $_POST['customer_id_to'];
+	update_option('download_orders_search_params', $search_params);
+}
+
 function downloadTest() {
 	$orders = searchOrders();
 	// die(var_dump($orders));

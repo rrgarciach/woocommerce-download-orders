@@ -129,365 +129,365 @@ function adminPAQtxt () {
 			$stl_con_iva = number_format($stl_con_iva, 5, '.', '');
 
 			// DETALLES DEL PEDIDO------------------------------------------------------------------------------>>>>  RENGLONAJE
-$productos .= "MGW10010\n";
-$productos .= $renglon."\n"; // NO. DE RENGLON DEL PEDIDO
-$productos .= $codigo."\n";
-$productos .= "1\n"; // ALMACEN
-$productos .= $cantidad."\n";
-$productos .= "0.00000\n";
-$productos .= $cantidad."\n";
-$productos .= "\n";
-$productos .= "\n";
-$productos .= $precio."\n"; // PRECIO DE CATALOGO
-$productos .= $precio."\n"; // PRECIO CAPTURADO
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= $stl_sin_iva."\n"; // STL SIN IVA
-$productos .= $iva_importe."\n";
-$productos .= $iva_porc."\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= $desc_importe."\n";
-$productos .= $desc_porc."\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= $stl_con_iva."\n";
-$productos .= "0.00000\n";
-$productos .= "\n";
-$productos .= "3\n";
-$productos .= "0\n";
-$productos .= "0\n";
-$productos .= $fechaPedido."\n";
-$productos .= "0\n";
-$productos .= "\n";
-$productos .= "$cantidad\n";	// CANTIDAD PENDIENTE DE SURTIR
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n"; 
-$productos .= "1\n"; // TIPO DE PAGO
-$productos .= "\n";
-$productos .= "\n";
-$productos .= "\n";
-$productos .= "\n";
-$productos .= "12/30/1899\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "0.00000\n";
-$productos .= "{\n";
-$productos .= "\n";
-$productos .= "}\n";
-$productos .= "0.00000\n";
-$productos .= "\n";
+$productos .= "MGW10010".PHP_EOL;
+$productos .= $renglon."".PHP_EOL; // NO. DE RENGLON DEL PEDIDO
+$productos .= $codigo."".PHP_EOL;
+$productos .= "1".PHP_EOL; // ALMACEN
+$productos .= $cantidad."".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= $cantidad."".PHP_EOL;
+$productos .= "".PHP_EOL;
+$productos .= "".PHP_EOL;
+$productos .= $precio."".PHP_EOL; // PRECIO DE CATALOGO
+$productos .= $precio."".PHP_EOL; // PRECIO CAPTURADO
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= $stl_sin_iva."".PHP_EOL; // STL SIN IVA
+$productos .= $iva_importe."".PHP_EOL;
+$productos .= $iva_porc."".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= $desc_importe."".PHP_EOL;
+$productos .= $desc_porc."".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= $stl_con_iva."".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "".PHP_EOL;
+$productos .= "3".PHP_EOL;
+$productos .= "0".PHP_EOL;
+$productos .= "0".PHP_EOL;
+$productos .= $fechaPedido."".PHP_EOL;
+$productos .= "0".PHP_EOL;
+$productos .= "".PHP_EOL;
+$productos .= "$cantidad".PHP_EOL;	// CANTIDAD PENDIENTE DE SURTIR
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL; 
+$productos .= "1".PHP_EOL; // TIPO DE PAGO
+$productos .= "".PHP_EOL;
+$productos .= "".PHP_EOL;
+$productos .= "".PHP_EOL;
+$productos .= "".PHP_EOL;
+$productos .= "12/30/1899".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "{".PHP_EOL;
+$productos .= "".PHP_EOL;
+$productos .= "}".PHP_EOL;
+$productos .= "0.00000".PHP_EOL;
+$productos .= "".PHP_EOL;
 
 			}
 		}
 	}
 
-$txt = "DOCUMENTOS
-MGW10008
-cCodigoConcepto
-CSERIEDOCUMENTO
-CFOLIO
-CFECHA
-cCodigoCteProv
-CRAZONSOCIAL
-CRFC
-cCodigoAgente
-CFECHAVENCIMIENTO
-CFECHAPRONTOPAGO
-CFECHAENTREGARECEPCION
-CFECHAULTIMOINTERES
-CIDMONEDA
-CTIPOCAMBIO
-CREFERENCIA
-cCodigoDocumentoOrigen
-CAFECTADO
-CIMPRESO
-CCANCELADO
-CDEVUELTO
-CIDPREPOLIZA
-CIDPREPOLIZACANCELACION
-CESTADOCONTABLE
-CGASTO1
-CGASTO2
-CGASTO3
-CDESCUENTOPRONTOPAGO
-CPORCENTAJEIMPUESTO1
-CPORCENTAJEIMPUESTO2
-CPORCENTAJEIMPUESTO3
-CPORCENTAJERETENCION1
-CPORCENTAJERETENCION2
-CPORCENTAJEINTERES
-CTEXTOEXTRA1
-CTEXTOEXTRA2
-CTEXTOEXTRA3
-CFECHAEXTRA
-CIMPORTEEXTRA1
-CIMPORTEEXTRA2
-CIMPORTEEXTRA3
-CIMPORTEEXTRA4
-CDESTINATARIO
-CNUMEROGUIA
-CMENSAJERIA
-CCUENTAMENSAJERIA
-CNUMEROCAJAS
-CPESO
-COBSERVACIONES
-CBANOBSERVACIONES
-CBANDATOSENVIO
-CBANCONDICIONESCREDITO
-CBANGASTOS
-CIMPCHEQPAQ
-CSISTORIG
-CIDMONEDCA
-CTIPOCAMCA
-/MGW10008
-MGW10011
-CTIPOCATALOGO
-CTIPODIRECCION
-CNOMBRECALLE
-CNUMEROEXTERIOR
-CNUMEROINTERIOR
-CCOLONIA
-CCODIGOPOSTAL
-CTELEFONO1
-CTELEFONO2
-CTELEFONO3
-CTELEFONO4
-CEMAIL
-CDIRECCIONWEB
-CPAIS
-CESTADO
-CCIUDAD
-CTEXTOEXTRA
-CMUNICIPIO
-/MGW10011
-MGW10010
-CNUMEROMOVIMIENTO
-cCodigoProducto
-cCodigoAlmacen
-CUNIDADES
-CUNIDADESNC
-CUNIDADESCAPTURADAS
-cNombreUnidad
-cNombreUnidadNC
-CPRECIO
-CPRECIOCAPTURADO
-CCOSTOCAPTURADO
-CCOSTOESPECIFICO
-CNETO
-CIMPUESTO1
-CPORCENTAJEIMPUESTO1
-CIMPUESTO2
-CPORCENTAJEIMPUESTO2
-CIMPUESTO3
-CPORCENTAJEIMPUESTO3
-CRETENCION1
-CPORCENTAJERETENCION1
-CRETENCION2
-CPORCENTAJERETENCION2
-CDESCUENTO1
-CPORCENTAJEDESCUENTO1
-CDESCUENTO2
-CPORCENTAJEDESCUENTO2
-CDESCUENTO3
-CPORCENTAJEDESCUENTO3
-CDESCUENTO4
-CPORCENTAJEDESCUENTO4
-CDESCUENTO5
-CPORCENTAJEDESCUENTO5
-CTOTAL
-CPORCENTAJECOMISION
-CREFERENCIA
-CAFECTAEXISTENCIA
-CAFECTADOSALDOS
-CAFECTADOINVENTARIO
-CFECHA
-CMOVTOOCULTO
-cCodigoMovtoOrigen
-CUNIDADESPENDIENTES
-CUNIDADESNCPENDIENTES
-CUNIDADESORIGEN
-CUNIDADESNCORIGEN
-CTIPOTRASPASO
-cCodigoValorClasificacion
-CTEXTOEXTRA1
-CTEXTOEXTRA2
-CTEXTOEXTRA3
-CFECHAEXTRA
-CIMPORTEEXTRA1
-CIMPORTEEXTRA2
-CIMPORTEEXTRA3
-CIMPORTEEXTRA4
-CGTOMOVTO
-COBSERVAMOV
-CCOMVENTA
-CSCMOVTO
-/MGW10010
-MGW10025
-cCodigoAlmacen
-cCodigoProducto
-CFECHA
-CTIPOCAPA
-CNUMEROLOTE
-CFECHACADUCIDAD
-CFECHAFABRICACION
-CPEDIMENTO
-CADUANA
-CFECHAPEDIMENTO
-CTIPOCAMBIO
-CEXISTENCIA
-CCOSTO
-CCODIGOCAPAORIGEN
-CNUMADUANA
-/MGW10025
-MGW10028
-cCodigoCapa
-CFECHA
-CUNIDADES
-CTIPOCAPA
-CNOMBREUNIDADCAPTURA
-/MGW10028
-MGW10032
-cCodigoProducto
-CNUMEROSERIE
-cCodigoAlmacen
-CNUMEROLOTE
-CFECHACADUCIDAD
-CFECHAFABRICACION
-CPEDIMENTO
-CADUANA
-CFECHAPEDIMENTO
-CTIPOCAMBIO
-CCOSTO
-CNUMADUANA
-/MGW10032
-MGW10009
-CLLAVEABONO
-cMonedaAbono
-CLLAVECARGO
-CIDMONEDA
-CIMPORTEABONO
-CIMPORTECARGO
-CFECHAABONOCARGO
-CLLAVEDESCUENTO
-cCodigoCteProv
-/MGW10009
+$txt = "DOCUMENTOS{PHP_EOL}
+MGW10008{PHP_EOL}
+cCodigoConcepto{PHP_EOL}
+CSERIEDOCUMENTO{PHP_EOL}
+CFOLIO{PHP_EOL}
+CFECHA{PHP_EOL}
+cCodigoCteProv{PHP_EOL}
+CRAZONSOCIAL{PHP_EOL}
+CRFC{PHP_EOL}
+cCodigoAgente{PHP_EOL}
+CFECHAVENCIMIENTO{PHP_EOL}
+CFECHAPRONTOPAGO{PHP_EOL}
+CFECHAENTREGARECEPCION{PHP_EOL}
+CFECHAULTIMOINTERES{PHP_EOL}
+CIDMONEDA{PHP_EOL}
+CTIPOCAMBIO{PHP_EOL}
+CREFERENCIA{PHP_EOL}
+cCodigoDocumentoOrigen{PHP_EOL}{PHP_EOL}
+CAFECTADO{PHP_EOL}
+CIMPRESO{PHP_EOL}
+CCANCELADO{PHP_EOL}
+CDEVUELTO{PHP_EOL}
+CIDPREPOLIZA{PHP_EOL}
+CIDPREPOLIZACANCELACION{PHP_EOL}
+CESTADOCONTABLE{PHP_EOL}
+CGASTO1{PHP_EOL}
+CGASTO2{PHP_EOL}
+CGASTO3{PHP_EOL}
+CDESCUENTOPRONTOPAGO{PHP_EOL}
+CPORCENTAJEIMPUESTO1{PHP_EOL}
+CPORCENTAJEIMPUESTO2{PHP_EOL}
+CPORCENTAJEIMPUESTO3{PHP_EOL}
+CPORCENTAJERETENCION1{PHP_EOL}
+CPORCENTAJERETENCION2{PHP_EOL}
+CPORCENTAJEINTERES{PHP_EOL}
+CTEXTOEXTRA1{PHP_EOL}
+CTEXTOEXTRA2{PHP_EOL}
+CTEXTOEXTRA3{PHP_EOL}
+CFECHAEXTRA{PHP_EOL}
+CIMPORTEEXTRA1{PHP_EOL}
+CIMPORTEEXTRA2{PHP_EOL}
+CIMPORTEEXTRA3{PHP_EOL}
+CIMPORTEEXTRA4{PHP_EOL}
+CDESTINATARIO{PHP_EOL}
+CNUMEROGUIA{PHP_EOL}
+CMENSAJERIA{PHP_EOL}
+CCUENTAMENSAJERIA{PHP_EOL}
+CNUMEROCAJAS{PHP_EOL}
+CPESO{PHP_EOL}
+COBSERVACIONES{PHP_EOL}
+CBANOBSERVACIONES{PHP_EOL}
+CBANDATOSENVIO{PHP_EOL}
+CBANCONDICIONESCREDITO{PHP_EOL}
+CBANGASTOS{PHP_EOL}
+CIMPCHEQPAQ{PHP_EOL}
+CSISTORIG{PHP_EOL}
+CIDMONEDCA{PHP_EOL}
+CTIPOCAMCA{PHP_EOL}
+/MGW10008{PHP_EOL}
+MGW10011{PHP_EOL}
+CTIPOCATALOGO{PHP_EOL}
+CTIPODIRECCION{PHP_EOL}
+CNOMBRECALLE{PHP_EOL}
+CNUMEROEXTERIOR{PHP_EOL}
+CNUMEROINTERIOR{PHP_EOL}
+CCOLONIA{PHP_EOL}
+CCODIGOPOSTAL{PHP_EOL}
+CTELEFONO1{PHP_EOL}
+CTELEFONO2{PHP_EOL}
+CTELEFONO3{PHP_EOL}
+CTELEFONO4{PHP_EOL}
+CEMAIL{PHP_EOL}
+CDIRECCIONWEB{PHP_EOL}
+CPAIS{PHP_EOL}
+CESTADO{PHP_EOL}
+CCIUDAD{PHP_EOL}
+CTEXTOEXTRA{PHP_EOL}
+CMUNICIPIO{PHP_EOL}
+/MGW10011{PHP_EOL}
+MGW10010{PHP_EOL}
+CNUMEROMOVIMIENTO{PHP_EOL}
+cCodigoProducto{PHP_EOL}
+cCodigoAlmacen{PHP_EOL}
+CUNIDADES{PHP_EOL}
+CUNIDADESNC{PHP_EOL}
+CUNIDADESCAPTURADAS{PHP_EOL}
+cNombreUnidad{PHP_EOL}
+cNombreUnidadNC{PHP_EOL}
+CPRECIO{PHP_EOL}
+CPRECIOCAPTURADO{PHP_EOL}
+CCOSTOCAPTURADO{PHP_EOL}
+CCOSTOESPECIFICO{PHP_EOL}
+CNETO{PHP_EOL}
+CIMPUESTO1{PHP_EOL}
+CPORCENTAJEIMPUESTO1{PHP_EOL}
+CIMPUESTO2{PHP_EOL}
+CPORCENTAJEIMPUESTO2{PHP_EOL}
+CIMPUESTO3{PHP_EOL}
+CPORCENTAJEIMPUESTO3{PHP_EOL}
+CRETENCION1{PHP_EOL}
+CPORCENTAJERETENCION1{PHP_EOL}
+CRETENCION2{PHP_EOL}
+CPORCENTAJERETENCION2{PHP_EOL}
+CDESCUENTO1{PHP_EOL}
+CPORCENTAJEDESCUENTO1{PHP_EOL}
+CDESCUENTO2{PHP_EOL}
+CPORCENTAJEDESCUENTO2{PHP_EOL}
+CDESCUENTO3{PHP_EOL}
+CPORCENTAJEDESCUENTO3{PHP_EOL}
+CDESCUENTO4{PHP_EOL}
+CPORCENTAJEDESCUENTO4{PHP_EOL}
+CDESCUENTO5{PHP_EOL}
+CPORCENTAJEDESCUENTO5{PHP_EOL}
+CTOTAL{PHP_EOL}
+CPORCENTAJECOMISION{PHP_EOL}
+CREFERENCIA{PHP_EOL}
+CAFECTAEXISTENCIA{PHP_EOL}
+CAFECTADOSALDOS{PHP_EOL}
+CAFECTADOINVENTARIO{PHP_EOL}
+CFECHA{PHP_EOL}
+CMOVTOOCULTO{PHP_EOL}
+cCodigoMovtoOrigen{PHP_EOL}
+CUNIDADESPENDIENTES{PHP_EOL}
+CUNIDADESNCPENDIENTES{PHP_EOL}
+CUNIDADESORIGEN{PHP_EOL}
+CUNIDADESNCORIGEN{PHP_EOL}
+CTIPOTRASPASO{PHP_EOL}
+cCodigoValorClasificacion{PHP_EOL}
+CTEXTOEXTRA1{PHP_EOL}
+CTEXTOEXTRA2{PHP_EOL}
+CTEXTOEXTRA3{PHP_EOL}
+CFECHAEXTRA{PHP_EOL}
+CIMPORTEEXTRA1{PHP_EOL}
+CIMPORTEEXTRA2{PHP_EOL}
+CIMPORTEEXTRA3{PHP_EOL}
+CIMPORTEEXTRA4{PHP_EOL}
+CGTOMOVTO{PHP_EOL}
+COBSERVAMOV{PHP_EOL}
+CCOMVENTA{PHP_EOL}
+CSCMOVTO{PHP_EOL}
+/MGW10010{PHP_EOL}
+MGW10025{PHP_EOL}
+cCodigoAlmacen{PHP_EOL}
+cCodigoProducto{PHP_EOL}
+CFECHA{PHP_EOL}
+CTIPOCAPA{PHP_EOL}
+CNUMEROLOTE{PHP_EOL}
+CFECHACADUCIDAD{PHP_EOL}
+CFECHAFABRICACION{PHP_EOL}
+CPEDIMENTO{PHP_EOL}
+CADUANA{PHP_EOL}
+CFECHAPEDIMENTO{PHP_EOL}
+CTIPOCAMBIO{PHP_EOL}
+CEXISTENCIA{PHP_EOL}
+CCOSTO{PHP_EOL}
+CCODIGOCAPAORIGEN{PHP_EOL}
+CNUMADUANA{PHP_EOL}
+/MGW10025{PHP_EOL}
+MGW10028{PHP_EOL}
+cCodigoCapa{PHP_EOL}
+CFECHA{PHP_EOL}
+CUNIDADES{PHP_EOL}
+CTIPOCAPA{PHP_EOL}
+CNOMBREUNIDADCAPTURA{PHP_EOL}
+/MGW10028{PHP_EOL}
+MGW10032{PHP_EOL}
+cCodigoProducto{PHP_EOL}
+CNUMEROSERIE{PHP_EOL}
+cCodigoAlmacen{PHP_EOL}
+CNUMEROLOTE{PHP_EOL}
+CFECHACADUCIDAD{PHP_EOL}
+CFECHAFABRICACION{PHP_EOL}
+CPEDIMENTO{PHP_EOL}
+CADUANA{PHP_EOL}
+CFECHAPEDIMENTO{PHP_EOL}
+CTIPOCAMBIO{PHP_EOL}
+CCOSTO{PHP_EOL}
+CNUMADUANA{PHP_EOL}
+/MGW10032{PHP_EOL}
+MGW10009{PHP_EOL}
+CLLAVEABONO{PHP_EOL}
+cMonedaAbono{PHP_EOL}
+CLLAVECARGO{PHP_EOL}
+CIDMONEDA{PHP_EOL}
+CIMPORTEABONO{PHP_EOL}
+CIMPORTECARGO{PHP_EOL}
+CFECHAABONOCARGO{PHP_EOL}
+CLLAVEDESCUENTO{PHP_EOL}
+cCodigoCteProv{PHP_EOL}
+/MGW10009{PHP_EOL}
 "; // INICIO DE LA ESTRUCTURA DEL TXT--------------
 
-$txt .= "\n";
-$txt .= "MGW10008\n"; //INFO DEL PEDIDO----------
-$txt .= "2\n";
-$txt .= "\n";
-$txt .= $folio."\n";
-$txt .= $fechaPedido."\n";
-$txt .= $id_cliente."\n";
-$txt .= $nombre."\n";
-$txt .= $rfc."\n";
-$txt .= "1\n";
-$txt .= $fecha15dias."\n"; // AUMENTADA 15 DIAS
-$txt .= $fechaPedido."\n";
-$txt .= $fecha1dia."\n"; // AUMENTADA 1 DIA
-$txt .= $fecha15dias."\n"; // AUMENTADA 15 DIAS
-$txt .= "1\n";
-$txt .= "1.00000\n";
-$txt .= "\n";
-$txt .= "\n";
-$txt .= "1\n";
-$txt .= "0\n"; // DOCUMENTO IMPRESO?
-$txt .= "0\n";
-$txt .= "0\n";
-$txt .= "0\n";
-$txt .= "0\n";
-$txt .= "1\n";
-$txt .= "0.00000\n";
-$txt .= "0.00000\n";
-$txt .= "0.00000\n";
-$txt .= "0.00000\n";
-$txt .= "0.00000\n";
-$txt .= "0.00000\n";
-$txt .= "0.00000\n";
-$txt .= "0.00000\n";
-$txt .= "0.00000\n";
-$txt .= "0.00000\n";
-$txt .= "\n";
-$txt .= "\n";
-$txt .= "\n";
-$txt .= "12/30/1899\n";
-$txt .= "0.00000\n";
-$txt .= "0.00000\n";
-$txt .= "0.00000\n";
-$txt .= "0.00000\n";
-$txt .= $nombre."\n";
-$txt .= "0\n";
-$txt .= "\n";
-$txt .= "\n";
-$txt .= "0.00000\n";
-$txt .= "0.00000\n";
-$txt .= "{\n";
-$txt .= "\n";
-$txt .= "\n";
-$txt .= "}\n";
-$txt .= "0\n";
-$txt .= "1\n";
-$txt .= "0\n";
-$txt .= "0\n";
-$txt .= "0.00000\n";
-$txt .= "0\n";
-$txt .= "0\n";
-$txt .= "0.00000\n";
-$txt .= "MGW10011\n"; // DIRECCION DEL CLIENTE-------------
-$txt .= "3\n"; // TIPO DE CATALOGO
-$txt .= "0\n"; // NUMERO DE DIRACCION
-$txt .= $calle."\n";
-$txt .= $numero."\n"; // NUMERO EXTERIOR
-$txt .= "\n"; // NUMERO INTERIOR
-$txt .= $colonia."\n";
-$txt .= $cp."\n";
-$txt .= $telefono1."\n";
-$txt .= $telefono2."\n";
-$txt .= "\n";
-$txt .= "\n";
-$txt .= "\n";  //******************************************
-$txt .= "\n";
-$txt .= "MEXICO\n";
-$txt .= $localidad."\n";
-$txt .= $localidad."\n";
-$txt .= "\n";
-$txt .= $estado."\n";
-$txt .= "MGW10011\n"; // DIRECCION DEL CLIENTE-------------
-$txt .= "3\n"; // TIPO DE CATALOGO
-$txt .= "1\n"; // NUMERO DE DIRACCION
-$txt .= $calle."\n";
-$txt .= $numero."\n"; // NUMERO EXTERIOR
-$txt .= "\n"; // NUMERO INTERIOR
-$txt .= $colonia."\n";
-$txt .= $cp."\n";
-$txt .= $telefono1."\n";
-$txt .= $telefono2."\n";
-$txt .= "\n";
-$txt .= "\n";
-$txt .= "\n";  //******************************************
-$txt .= "\n";
-$txt .= "MEXICO\n";
-$txt .= $localidad."\n";
-$txt .= $localidad."\n";
-$txt .= "\n";
-$txt .= $estado."\n";
+$txt .= "".PHP_EOL;
+$txt .= "MGW10008".PHP_EOL; //INFO DEL PEDIDO----------
+$txt .= "2".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= $folio."".PHP_EOL;
+$txt .= $fechaPedido."".PHP_EOL;
+$txt .= $id_cliente."".PHP_EOL;
+$txt .= $nombre."".PHP_EOL;
+$txt .= $rfc."".PHP_EOL;
+$txt .= "1".PHP_EOL;
+$txt .= $fecha15dias."".PHP_EOL; // AUMENTADA 15 DIAS
+$txt .= $fechaPedido."".PHP_EOL;
+$txt .= $fecha1dia."".PHP_EOL; // AUMENTADA 1 DIA
+$txt .= $fecha15dias."".PHP_EOL; // AUMENTADA 15 DIAS
+$txt .= "1".PHP_EOL;
+$txt .= "1.00000".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= "1".PHP_EOL;
+$txt .= "0".PHP_EOL; // DOCUMENTO IMPRESO?
+$txt .= "0".PHP_EOL;
+$txt .= "0".PHP_EOL;
+$txt .= "0".PHP_EOL;
+$txt .= "0".PHP_EOL;
+$txt .= "1".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= "12/30/1899".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= $nombre."".PHP_EOL;
+$txt .= "0".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "{".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= "}".PHP_EOL;
+$txt .= "0".PHP_EOL;
+$txt .= "1".PHP_EOL;
+$txt .= "0".PHP_EOL;
+$txt .= "0".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "0".PHP_EOL;
+$txt .= "0".PHP_EOL;
+$txt .= "0.00000".PHP_EOL;
+$txt .= "MGW10011".PHP_EOL; // DIRECCION DEL CLIENTE-------------
+$txt .= "3".PHP_EOL; // TIPO DE CATALOGO
+$txt .= "0".PHP_EOL; // NUMERO DE DIRACCION
+$txt .= $calle."".PHP_EOL;
+$txt .= $numero."".PHP_EOL; // NUMERO EXTERIOR
+$txt .= "".PHP_EOL; // NUMERO INTERIOR
+$txt .= $colonia."".PHP_EOL;
+$txt .= $cp."".PHP_EOL;
+$txt .= $telefono1."".PHP_EOL;
+$txt .= $telefono2."".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= "".PHP_EOL;  //******************************************
+$txt .= "".PHP_EOL;
+$txt .= "MEXICO".PHP_EOL;
+$txt .= $localidad."".PHP_EOL;
+$txt .= $localidad."".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= $estado."".PHP_EOL;
+$txt .= "MGW10011".PHP_EOL; // DIRECCION DEL CLIENTE-------------
+$txt .= "3".PHP_EOL; // TIPO DE CATALOGO
+$txt .= "1".PHP_EOL; // NUMERO DE DIRACCION
+$txt .= $calle."".PHP_EOL;
+$txt .= $numero."".PHP_EOL; // NUMERO EXTERIOR
+$txt .= "".PHP_EOL; // NUMERO INTERIOR
+$txt .= $colonia."".PHP_EOL;
+$txt .= $cp."".PHP_EOL;
+$txt .= $telefono1."".PHP_EOL;
+$txt .= $telefono2."".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= "".PHP_EOL;  //******************************************
+$txt .= "".PHP_EOL;
+$txt .= "MEXICO".PHP_EOL;
+$txt .= $localidad."".PHP_EOL;
+$txt .= $localidad."".PHP_EOL;
+$txt .= "".PHP_EOL;
+$txt .= $estado."".PHP_EOL;
 $txt .= $productos;
 /*//---------------------------------------------------------------
 $txt .= "MGW10010

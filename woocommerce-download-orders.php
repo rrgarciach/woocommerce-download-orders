@@ -84,13 +84,16 @@ $search_params = getParamsOptions();
 		</thead>
 		<tfoot>
 			<tr>
-				<th>ID Pedido:</th>
-				<th>ID Cliente:</th>
-				<th>Nombre Cliente:</th>
-				<th>Fecha</th>
-				<th>Detalle</th>
-				<th>Total</th>
-				<th>Descarga</th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th>Descargar Todo</th>
+				<th>
+					<button href="" id="download-<?php echo $order->id ?>">CSV</button> 
+					<button href="" id="download-<?php echo $order->id ?>">TXT</button>
+				</th>
 			</tr>
 		</tfoot>
 		<tbody>
@@ -99,13 +102,23 @@ $search_params = getParamsOptions();
 	foreach ($orders as $order) {
 ?>
 			<tr>
-				<td><?php echo $order->id ?></td>
-				<td><?php echo $order->customer->user_login ?></td>
-				<td><?php echo $order->customer->display_name ?></td>
-				<td><?php echo $order->order_date ?></td>
-				<td></td>
-				<td align="right">$ <?php echo number_format($order->total,2) ?></td>
-				<td><button href="" id="download-<?php echo $order->id ?>">CSV</button> <button href="" id="download-<?php echo $order->id ?>">TXT</button></td>
+				<td><?php echo $order->id; ?></td>
+				<td><?php echo $order->customer->user_login; ?></td>
+				<td><?php echo $order->customer->display_name; ?></td>
+				<?php 
+				setlocale(LC_TIME, 'es_ES.UTF-8');
+				// strftime("%A, %d de %B de %Y", $miFecha);
+				// date('d / m / Y', strtotime($order->order_date) );
+				?>
+				<td><?php echo strftime("%d/%B/%Y", strtotime($order->order_date)); ?></td>
+				<td>
+					<button href="" id="details-<?php echo $order->id ?>">VER</button>
+				</td>
+				<td align="right">$ <?php echo number_format($order->total,2); ?></td>
+				<td>
+					<button href="" id="download-<?php echo $order->id ?>">CSV</button> 
+					<button href="" id="download-<?php echo $order->id ?>">TXT</button>
+				</td>
 				<script type="text/javascript">
 					$('#download-<?php echo $order->id ?>').on("click", function(e){
 					    e.preventDefault();

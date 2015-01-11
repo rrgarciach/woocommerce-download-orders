@@ -31,7 +31,6 @@ function attachDownloadTrigger() {
 		} else if ( isset($_GET['order_id']) ) {
 			$order = $_GET['order_id'];
 			downloadTest( array('order_id' => $order) );
-			// downloadTest( array('p' => $order) );
 		} else {
 			downloadTest();
 		}

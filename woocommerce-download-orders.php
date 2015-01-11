@@ -17,14 +17,24 @@ add_action( 'admin_enqueue_scripts', 'add_js_script_init' );
 function add_js_script_init() {
 	wp_enqueue_script("admin_print_scripts-download-orders", plugins_url( '/js/download-orders.js' , __FILE__ ));
 }
-
-// inclure the download script:
+// include the txt Perser script;
+include dirname(__FILE__).'/txtParser.php';
+// include the download script:
 include dirname(__FILE__).'/downloader.php';
 // Attach tne download function to the WP script flow in order to be triggered:
 add_action('admin_menu', 'attachDownloadTrigger');
 function attachDownloadTrigger() {
 	if( isset($_GET['download']) ) {
-		downloadTest();
+		if ( isset($_GET['customer_id']) ) {
+			$customer = $_GET['customer_id'];
+			downloadTest( array('meta_key' => '_customer_user', 'meta_value' => $customer) );
+		} else if ( isset($_GET['order_id']) ) {
+			$order = $_GET['order_id'];
+			downloadTest( array('order_id' => $order) );
+			// downloadTest( array('p' => $order) );
+		} else {
+			downloadTest();
+		}
 	}
 }
 

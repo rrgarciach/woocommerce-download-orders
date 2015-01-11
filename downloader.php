@@ -14,8 +14,14 @@ function getParamsOptions() {
 	return $search_params;
 }
 
-function downloadTest() {
+function downloadTXT() {
 	$orders = searchOrders();
+	$parser = new txtParser();
+	$parser->parseToAdminPAQtxt($orders);
+}
+
+function downloadTest($args = array()) {
+	$orders = searchOrders($args);
 	// die(var_dump($orders));
 	$fileName = 'somefile.csv';
  
@@ -75,42 +81,55 @@ function downloadTest() {
 }
 
 function searchOrders( $args = array() ) {
-	$args['post_type'] = 'shop_order';
-	$args['post_status'] = 'publish';
-	$args['meta_key'] = '_customer_user';
-	$args['posts_per_page'] = '-1';
-
-	$query = new WP_Query($args);
-
-	$data = $query->posts;
-
-	$ordersData = array();
-	foreach ($data as $dataItem) {
-		$order = new WC_Order();
-
-		$order->populate($dataItem);
-
-		// $order->customer = get_user_by( 'id', $order->user_id );
+	if ( isset($args['order_id']) ) {
+		$order_id = $args['order_id'];
+		$order = new WC_Order( $order_id );
 		$order->customer = $order->get_user();
-		// die(var_dump($order->customer->display_name));
-
 		$order->total = $order->calculate_totals();
-		// die(var_dump($order->total));
+		// die( var_dump( $order ) );
 
-		/*
-		global $wpdb;
-		// $result = (array) $wpdb->get_results("SELECT t2.meta_value FROM wp_woocommerce_order_items as t1 JOIN wp_woocommerce_order_itemmeta as t2 ON t1.order_item_id=t2.order_item_id WHERE t1.order_id=45 AND (t2.meta_key='_line_subtotal' OR t2.meta_key='_line_subtotal_tax')");
-		// $result = (array) $wpdb->get_results("SELECT t2.* FROM wp_woocommerce_order_items as t1 JOIN wp_woocommerce_order_itemmeta as t2 ON t1.order_item_id=t2.order_item_id WHERE t1.order_id=45");
-		// echo gettype($result);
-		// die(var_dump($result));
-		$order->total = 0.0;
-		foreach ($result as $amount) {
-			// die( var_dump($amount) );
-			// die( var_dump($result[0]->meta_value) );
-			$order->total += $amount->meta_value;
-		}
-		*/
+		$ordersData = array();
 		$ordersData[] = $order;
+
+	} else {
+		$args['post_type']		 = isset($args['post_type']) ? $args['post_type'] : 'shop_order';
+		$args['post_status']	 = isset($args['post_status']) ? $args['post_status'] : 'publish';
+		$args['meta_key']		 = isset($args['meta_key']) ? $args['meta_key'] : '_customer_user';
+		// $args['posts_per_page']	 = isset($args['posts_per_page']) ? $args['posts_per_page'] : '-1';
+		$query = new WP_Query( $args );
+		// $query = new WP_Query( 'p=1' );
+		// die( var_dump($args) );
+
+		$data = $query->posts;
+
+		$ordersData = array();
+		foreach ($data as $dataItem) {
+			$order = new WC_Order();
+
+			$order->populate($dataItem);
+			// die(var_dump($order));
+
+			// $order->customer = get_user_by( 'id', $order->user_id );
+			$order->customer = $order->get_user();
+
+			$order->total = $order->calculate_totals();
+			// die(var_dump($order->total));
+
+			/*
+			global $wpdb;
+			// $result = (array) $wpdb->get_results("SELECT t2.meta_value FROM wp_woocommerce_order_items as t1 JOIN wp_woocommerce_order_itemmeta as t2 ON t1.order_item_id=t2.order_item_id WHERE t1.order_id=45 AND (t2.meta_key='_line_subtotal' OR t2.meta_key='_line_subtotal_tax')");
+			// $result = (array) $wpdb->get_results("SELECT t2.* FROM wp_woocommerce_order_items as t1 JOIN wp_woocommerce_order_itemmeta as t2 ON t1.order_item_id=t2.order_item_id WHERE t1.order_id=45");
+			// echo gettype($result);
+			// die(var_dump($result));
+			$order->total = 0.0;
+			foreach ($result as $amount) {
+				// die( var_dump($amount) );
+				// die( var_dump($result[0]->meta_value) );
+				$order->total += $amount->meta_value;
+			}
+			*/
+			$ordersData[] = $order;
+		}
 	}
 		// die(var_dump($ordersData[3]->get_items()));
 		// var_dump($ordersData[0]);

@@ -1,8 +1,8 @@
 <?php
-function adminPAQtxt () {
+class txtParser {
+function parseToAdminPAQtxt($order) {
 	$id_pedido = $_GET['id_pedido'];
 	$folio = $_GET['folio'];
-	require_once "../classes/mysql.class.php";
 	$connection = new Connection();
 	$connection->connRead('gcadmin');
 	//$folio = $_SESSION['order']->id_pedido;
@@ -464,6 +464,6 @@ $pedidoFormatted = str_pad($folio, 15, '0', STR_PAD_LEFT); // SETS FORMAT WITH L
 
 }
 
-adminPAQtxt();
+}
 
 ?>
